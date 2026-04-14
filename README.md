@@ -1,5 +1,9 @@
 # EarlySignal 🔍
 
+## Demo
+
+https://github.com/user-attachments/assets/69c7603e-8cd3-4878-b79a-9163dd86d21b
+
 > Spot what's going mainstream **before** it does.
 
 **Live app → [earlysignal.streamlit.app](https://earlysignal.streamlit.app)**
@@ -49,8 +53,4 @@ streamlit run app.py
 ---
 
 Built by **Enrique C. Hernandez** — [LinkedIn](https://linkedin.com/in/enriquechernandez)
-
-## Demo
-
-https://github.com/user-attachments/assets/69c7603e-8cd3-4878-b79a-9163dd86d21b
 
