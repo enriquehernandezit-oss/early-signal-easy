@@ -1,4 +1,5 @@
 # EarlySignal 🔍
+**Live app → [earlysignal.streamlit.app](https://earlysignal.streamlit.app)**
 
 ## Demo
 
