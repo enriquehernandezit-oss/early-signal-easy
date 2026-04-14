@@ -2,6 +2,30 @@ import streamlit as st
 import time
 from agent import run_agent
 from style import apply_styles
+import datetime
+import json
+import os
+
+# ── Usage limit ──────────────────────────────────────────────────────────
+DAILY_LIMIT = 10  # max searches per day
+
+def get_usage():
+    usage_file = "usage.json"
+    today = str(datetime.date.today())
+    if os.path.exists(usage_file):
+        with open(usage_file, "r") as f:
+            data = json.load(f)
+        if data.get("date") == today:
+            return data.get("count", 0)
+    return 0
+
+def increment_usage():
+    usage_file = "usage.json"
+    today = str(datetime.date.today())
+    count = get_usage() + 1
+    with open(usage_file, "w") as f:
+        json.dump({"date": today, "count": count}, f)
+    return count
 
 st.set_page_config(
     page_title="EarlySignal",
@@ -49,11 +73,16 @@ with col2:
     """, unsafe_allow_html=True)
 
 if run_button and industry:
-    st.markdown('<hr>', unsafe_allow_html=True)
+    current_usage = get_usage()
+    if current_usage >= DAILY_LIMIT:
+        st.error("Daily limit of " + str(DAILY_LIMIT) + " searches reached. Come back tomorrow.")
+        st.stop()
 
+    st.markdown('<hr>', unsafe_allow_html=True)
     with st.spinner("Scanning the internet for signals in " + industry + "..."):
         time.sleep(1)
         result = run_agent(industry)
+        increment_usage()
 
     if "error" in result:
         st.error("Something went wrong: " + result.get("error", ""))
