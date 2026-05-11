@@ -2,8 +2,7 @@
 **Live app → [earlysignal.streamlit.app](https://earlysignal.streamlit.app)**
 
 ## Demo
-
-https://github.com/user-attachments/assets/69c7603e-8cd3-4878-b79a-9163dd86d21b
+https://github.com/user-attachments/assets/7d20fff4-69ae-49f7-ab90-b047b866e682
 
 > Spot what's going mainstream **before** it does.
 
