@@ -69,8 +69,5 @@ streamlit run app.py
 
 ---
 
-Built by **Enrique C. Hernandez** · [LinkedIn](https://linkedin.com/in/enriquechernandez)
----
-
 Built by **Enrique C. Hernandez** — [LinkedIn](https://linkedin.com/in/enriquechernandez)
 
